@@ -14,4 +14,4 @@ except IOError:
 # 
 
 
-import mywsgi
+from mywsgi import application
