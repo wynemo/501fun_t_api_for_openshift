@@ -69,13 +69,13 @@ class index:
 <script type="text/javascript" >
 function auth() {
 
-    var message1 = $$.ajax({
+    var message1 = $.ajax({
                    type: "POST",
                    url: "/auth",
                    //data: dataString,
                    async: false
                 }).responseText;
-   $$('.auth_url').append($$(message1));
+   $('.auth_url').append($(message1));
    return false;
 
 }
