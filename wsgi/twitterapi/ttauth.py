@@ -1,5 +1,5 @@
 import web,twitUtil
-from config import setting
+from config import settings
 
 class auth:
     def POST(self):
@@ -19,7 +19,7 @@ class auth:
                 folder1 = os.environ['WEBPY_HOME']
             except:
                 pass
-            f2 = open(folder1 + setting.get_home_dir() + 'token.txt','w')
+            f2 = open(folder1 + settings.get_home_dir() + 'token.txt','w')
             f2.write(str2)
             f2.close()
         except Exception,e:

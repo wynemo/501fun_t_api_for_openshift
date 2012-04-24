@@ -11,7 +11,7 @@ class index:
         try:#callback,update token,secret
             if i.has_key('oauth_verifier'):
                 credentials = {}  
-                f1 = open(setting.get_home_dir() + 'token.txt','r')
+                f1 = open(settings.get_home_dir() + 'token.txt','r')
                 str1 = f1.read()
                 f1.close()
                 l1 = str1.split(';')
@@ -27,7 +27,7 @@ class index:
                     ss = '1'
                     str2 = 'ot=' + ot + ';' + 'ots=' + ots + ';' + 'ss=' + ss
                     str2 += ';' + 'sc_name=' + sc_name + ';' + 'us_id=' + us_id
-                    f2 = open(setting.get_home_dir() + 'token.txt','w')
+                    f2 = open(settings.get_home_dir() + 'token.txt','w')
                     f2.write(str2)
                     f2.close()
         except Exception,e:
