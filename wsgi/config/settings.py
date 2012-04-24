@@ -2,7 +2,7 @@
 # coding: utf-8
 import web ,os
 
-def get_home_dir()
+def get_home_dir():
     try:
         dir1 = os.environ['OPENSHIFT_REPO_DIR']
         if !dir1.endswith('/'):
