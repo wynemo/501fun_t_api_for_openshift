@@ -5,4 +5,5 @@
 # could be python, php, ruby, etc.
 
 export WEBPY_HOME=${OPENSHIFT_REPO_DIR}wsgi/
+export
 
