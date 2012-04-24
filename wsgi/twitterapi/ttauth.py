@@ -1,4 +1,5 @@
 import web,twitUtil
+from config import setting
 
 class auth:
     def POST(self):
@@ -13,14 +14,12 @@ class auth:
             ots = credentials['oauth_token_secret']
             ss = '0'
             str2 = 'ot=' + ot + ';' + 'ots=' + ots + ';' + 'ss=' + ss
-            if False == os.path.exists('token.txt'):
-                return '<div>' + str(os.listdir('.')) + '</div>'
             folder1 = './'
             try:
                 folder1 = os.environ['WEBPY_HOME']
             except:
                 pass
-            f2 = open(folder1 + 'token.txt','w')
+            f2 = open(folder1 + setting.get_home_dir() + 'token.txt','w')
             f2.write(str2)
             f2.close()
         except Exception,e:

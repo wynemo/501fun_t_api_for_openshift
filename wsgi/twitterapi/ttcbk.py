@@ -8,11 +8,10 @@ class index:
     def GET(self):   
         web.header('Content-Type','text/html; charset=utf-8', unique=True)               
         i = web.input()
-        
         try:#callback,update token,secret
             if i.has_key('oauth_verifier'):
                 credentials = {}  
-                f1 = open('token.txt','r')
+                f1 = open(setting.get_home_dir() + 'token.txt','r')
                 str1 = f1.read()
                 f1.close()
                 l1 = str1.split(';')
@@ -28,54 +27,11 @@ class index:
                     ss = '1'
                     str2 = 'ot=' + ot + ';' + 'ots=' + ots + ';' + 'ss=' + ss
                     str2 += ';' + 'sc_name=' + sc_name + ';' + 'us_id=' + us_id
-                    f2 = open('token.txt','w')
+                    f2 = open(setting.get_home_dir() + 'token.txt','w')
                     f2.write(str2)
                     f2.close()
         except Exception,e:
             #print '---e is ',e
             pass
-        try:
-            return render.twittest()
-        except:
-            return '''$def with ()
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-<title>anopi</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-
-<body>
-
-<script type="text/javascript" 
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
-</script>
-<script type="text/javascript" >
-function auth() {
-
-    var message1 = $.ajax({
-                   type: "POST",
-                   url: "/auth",
-                   //data: dataString,
-                   async: false
-                }).responseText;
-   $('.auth_url').append($(message1));
-   return false;
-
-}
-</script>
-
-
-<form name="t_auth">
-<p> <input class="buttonauth" type="button" value="auth" onclick="return auth();"/></p>
-</form>
-
-<div class="auth_url">
-</div>
-     
-     
-</body>
-</html>
-'''
-
+        return render.twittest()
 

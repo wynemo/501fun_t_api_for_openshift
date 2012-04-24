@@ -29,7 +29,7 @@ except ImportError:
 
 
 import oauth2 as oauth
-
+from config import setting
 
 # Taken from oauth implementation at: http://github.com/harperreed/twitteroauth-python/tree/master
 REQUEST_TOKEN_URL = 'https://twitter.com/oauth/request_token'
@@ -166,7 +166,7 @@ class OAuthApi():
     
     def ApiCall1(self, call, type="GET", parameters={}):
         if parameters.has_key('x_auth_mode'):#twitter iphone xauth
-            f1 = open('token.txt','r')
+            f1 = open(setting.get_home_dir() + 'token.txt','r')
             str1 = f1.read()
             f1.close()
             l1 = str1.split(';')

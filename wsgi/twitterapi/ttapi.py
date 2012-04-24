@@ -66,7 +66,7 @@ class api:
 
         access_token = {}
             
-        f1 = open('token.txt','r')
+        f1 = open(setting.get_home_dir() + 'token.txt','r')
         str1 = f1.read()
         f1.close()
         l1 = str1.split(';')
