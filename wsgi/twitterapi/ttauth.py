@@ -2,6 +2,7 @@ import web,twitUtil
 
 class auth:
     def POST(self):
+        import os.path
         web.header('Content-Type','text/html; charset=utf-8', unique=True)
         str1 = ''
         try:
@@ -11,6 +12,8 @@ class auth:
             ots = credentials['oauth_token_secret']
             ss = '0'
             str2 = 'ot=' + ot + ';' + 'ots=' + ots + ';' + 'ss=' + ss
+            if False == os.path.exists('token.txt'):
+                return '<div>' + 'token.txt not exist' + '</div>'
             f2 = open('token.txt','w')
             f2.write(str2)
             f2.close()
