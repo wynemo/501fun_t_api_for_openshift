@@ -13,8 +13,8 @@ class auth:
             ots = credentials['oauth_token_secret']
             ss = '0'
             str2 = 'ot=' + ot + ';' + 'ots=' + ots + ';' + 'ss=' + ss
-            #if False == os.path.exists('token.txt'):
-            #    return '<div>' + 'token.txt not exist' + '</div>'
+            if False == os.path.exists('token.txt'):
+                return '<div>' + str(os.listdir('.')) + '</div>'
             folder1 = './'
             try:
                 folder1 = os.environ['WEBPY_HOME']
