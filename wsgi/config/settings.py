@@ -16,12 +16,12 @@ render = web.template.render(get_home_dir() + 'templates/', cache=False)
 
 web.config.debug = False
 
-consumer_key = "A3Di73EDiyHM8u2IyxHLw"
-consumer_secret = "pSSGT09FSR3ONawurMbEp5CLPeiptNs8XFwBxprEMI"
+consumer_key = ""
+consumer_secret = ""
 
 
 #for j.mp link
-no_jmp = True 
+no_jmp = False 
 bitly_name = ''
 bitly_key = ''
 
