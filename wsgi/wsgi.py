@@ -4,9 +4,9 @@
 import web
 from config import settings
 
-urls = ('/','twitterapi.ttcbk.index',
-    '/auth','twitterapi.ttauth.auth',
-    '/api/(.*)','twitterapi.ttapi.api',
+urls = ('/','501fun_t_api.twitterapi.ttcbk.index',
+    '/auth','501fun_t_api.twitterapi.ttauth.auth',
+    '/api/(.*)','501fun_t_api.twitterapi.ttapi.api',
 )
 
 app = web.application(urls, globals())

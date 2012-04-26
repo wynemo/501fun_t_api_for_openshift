@@ -21,7 +21,7 @@ consumer_secret = "pSSGT09FSR3ONawurMbEp5CLPeiptNs8XFwBxprEMI"
 
 
 #for j.mp link
-no_jmp = False 
+no_jmp = True 
 bitly_name = ''
 bitly_key = ''
 

@@ -1,0 +1,3 @@
+[submodule "wsgi/501fun_t_api"]
+	path = wsgi/501fun_t_api
+	url = git://github.com/wynemo/501fun_t_api.git
